@@ -68,6 +68,17 @@ function question4 () {
 //    Display the name, number of items and the items it is made of.
 function question5 () {
   // Answer:
+  let itemsSelected = [];
+  data.forEach(function(e) {
+    if( e.materials.length >= 8 ) {
+      itemsSelected.push(e);
+    }
+  });
+  console.log("Items made from 8 or more materials:");
+  itemsSelected.forEach(function(e) {
+    console.log("Name: " + e.title);
+    console.log("Number of items: " + e.materials.length);
+  });
 }
 
 
