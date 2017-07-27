@@ -2,7 +2,8 @@
 // you have access to the `data` variable that contains the Etsy Store data.
 // Open your `index.html` page in your browser and you can verify that the following
 // is properly working. The `data` variable is an array with 25 items in it
-console.log(data);
+
+// console.log(data);
 
 
 
@@ -13,7 +14,7 @@ function question1 () {
   data.forEach(function(e) {
     total += e.price;
   });
-  console.log( total/data.length );
+  console.log("Average price of all items: $" + (total/data.length).toFixed(2));
 }
 
 
@@ -27,7 +28,11 @@ function question2 () {
       itemsSelected.push(e);
     }
   });
-  console.log(itemsSelected);
+  console.log("Items that cost between $14 and $18:");
+  itemsSelected.forEach(function(e) {
+    console.log(" * " + e.title + "  Price: $" + e.price);
+    console.log();
+  });
 }
 
 
@@ -41,9 +46,10 @@ function question3 () {
       itemsSelected.push(e);
     }
   });
+  console.log("Items with GBP as the currency code:");
   itemsSelected.forEach(function(e) {
-    console.log("Name: " + e.title);
-    console.log("Price: " + e.price);
+    console.log(" * " + e.title + "  Price: $" + e.price);
+    console.log();
   });
 }
 
@@ -59,7 +65,7 @@ function question4 () {
   });
   console.log("Items made of wood");
   itemsSelected.forEach(function(e) {
-    console.log("Name: " + e.title);
+    console.log(" * " + e.title);
   });
 }
 
@@ -76,8 +82,10 @@ function question5 () {
   });
   console.log("Items made from 8 or more materials:");
   itemsSelected.forEach(function(e) {
-    console.log("Name: " + e.title);
-    console.log("Number of items: " + e.materials.length);
+    console.log(" * " + e.title + ", " + e.materials.length + " materials used");
+    e.materials.forEach(function(m) {
+      console.log("    * " + m);
+    })
   });
 }
 
@@ -92,9 +100,5 @@ function question6 () {
       itemsSelected.push(e);
     }
   });
-  console.log("Items made my the seller:");
-  itemsSelected.forEach(function(e) {
-    console.log("Name: " + e.title);
-    console.log("Who Made: " + e.who_made);
-  });
+  console.log("Items made my the seller: " + itemsSelected.length);
 }
