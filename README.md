@@ -8,3 +8,16 @@
 the name, number of materials, and a list of those
 materials.
 1. Find the items that were made by their sellers.
+
+***
+
+The data was supplied as a JS object and is found
+in `data.js`. The solutions to each of these problems
+involved scanning through the list of items and
+matching on the desired property.
+
+Throughout each, I used a variable named itemsSelected
+and pushed matching items onto that list.
+
+Then I just had to loop over the itemsSelected and
+`console.log` the desired information.
