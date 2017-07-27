@@ -86,4 +86,15 @@ function question5 () {
 // Answer:
 function question6 () {
   // Answer:
+  let itemsSelected = [];
+  data.forEach(function(e) {
+    if( e.who_made === 'i_did' ) {
+      itemsSelected.push(e);
+    }
+  });
+  console.log("Items made my the seller:");
+  itemsSelected.forEach(function(e) {
+    console.log("Name: " + e.title);
+    console.log("Who Made: " + e.who_made);
+  });
 }
